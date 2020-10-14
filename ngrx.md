@@ -1,5 +1,3 @@
-# NGR
-
 **Redux** — js-библиотека, предназначенная для управления состоянием приложения. Чаще всего используется в связке с React или Angular для разработки клиентской части. Содержит ряд инструментов, позволяющих значительно упростить передачу данных хранилища через контекст.               
 
 Библиотека **NgRx** реализует принцип работы Redux для Angular приложений.         
@@ -14,7 +12,9 @@ https://www.youtube.com/watch?v=n8e9dBDzTzw&t=2s
 https://www.youtube.com/watch?v=kEbdQaLdDoo            
 https://www.youtube.com/watch?v=5MwaZ2G5WnQ           
 
-## Установка ngrx-store (хранилища) [ https://ngrx.io/guide/store/install ]          
+# Начало работы с NGRX
+
+## 1. Установка ngrx-store (хранилища) [ https://ngrx.io/guide/store/install ]          
 С помощью команды `ng add @ngrx/store@latest`, выполняем установку *ngrx-store* в ангуляр-проект.   
 В результате произойдут следующие изменения:      
 - *package.json*:
@@ -37,4 +37,26 @@ import { reducers, metaReducers } from './reducers';
 ```
 - будет создана новая директория *reducers* и файл *src\app\reducers\index.ts*
 
-## Установка store-devtools [ https://ngrx.io/guide/store-devtools/install ]  
+## 2. Установка store-devtools [ https://ngrx.io/guide/store-devtools/install ]  
+С помощью команды `ng add @ngrx/store-devtools@latest`, выполняем установку *store-devtools* в ангуляр-проект.
+В результате произойдут следующие изменения:      
+- *package.json*:
+```json
+  "dependencies": {
+    "@ngrx/store-devtools": "^10.0.1",
+  },
+```
+- *src\app\app.module.ts*:
+```js
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+@NgModule({
+  imports: [
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+  ],
+})
+```
+
+## 3. Установка ngrx-effects [ https://ngrx.io/guide/effects/install ]
+С помощью команды `ng add @ngrx/effects@latest`, выполняем установку *ngrx-effects* в ангуляр-проект.
+В результате произойдут следующие изменения: 
