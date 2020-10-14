@@ -1,24 +1,40 @@
-Redux — js-библиотека, предназначенная для управления состоянием приложения. Чаще всего используется в связке с React или Angular для разработки клиентской части. Содержит ряд инструментов, позволяющих значительно упростить передачу данных хранилища через контекст.
+# NGR
 
-https://ngrx.io/guide/store
-Библиотека NgRx реализует принцип работы Redux для Angular приложений. 
-Главная цель NgRx - централизовать и сделать максимально понятным управление всеми состояниями приложения.
+**Redux** — js-библиотека, предназначенная для управления состоянием приложения. Чаще всего используется в связке с React или Angular для разработки клиентской части. Содержит ряд инструментов, позволяющих значительно упростить передачу данных хранилища через контекст.               
+
+Библиотека **NgRx** реализует принцип работы Redux для Angular приложений.         
+Главная цель NgRx - централизовать и сделать максимально понятным управление всеми состояниями приложения.             
 Цель достигается благодаря заложенным в библиотеке нескольким фундаментальным принципам:
--	Наличие единственного источника данных о состоянии - хранилища (store);
--	Доступность состояния только для чтения;
--	Изменение состояние осуществляется только через действия (actions), которые обрабатываются редюсерами (reducer), представляющими собой чистые функции.
+- Наличие единственного источника данных о состоянии - хранилища (store);
+- Доступность состояния только для чтения;
+- Изменение состояние осуществляется только через действия (actions), которые обрабатываются редюсерами (reducer), представляющими собой чистые функции.
 
-https://www.youtube.com/watch?v=cklhiPDxkck&list=PL6tnFekR2qfPBdxroaLRqvIv_EJoxauUO
-https://www.youtube.com/watch?v=n8e9dBDzTzw&t=2s
-https://www.youtube.com/watch?v=kEbdQaLdDoo
-https://www.youtube.com/watch?v=5MwaZ2G5WnQ
+https://www.youtube.com/watch?v=cklhiPDxkck&list=PL6tnFekR2qfPBdxroaLRqvIv_EJoxauUO                    
+https://www.youtube.com/watch?v=n8e9dBDzTzw&t=2s            
+https://www.youtube.com/watch?v=kEbdQaLdDoo            
+https://www.youtube.com/watch?v=5MwaZ2G5WnQ           
 
-Как работает NgRx:
-- Редюсер – это обычные функции, которые содержат основной функционал приложения. 
-- В редюсер передаем экшен, который говорит, что ему нужно сделать и после этого редюсер меняет стейт всего приложения.
-- Стейт – это объект, в котором хранится состояние всего нашего приложения.
+## Установка ngrx-store (хранилища) [ https://ngrx.io/guide/store/install ]          
+С помощью команды `ng add @ngrx/store@latest`, выполняем установку *ngrx-store* в ангуляр-проект.   
+В результате произойдут следующие изменения:      
+- *package.json*:
+```json
+  "dependencies": {
+    "@ngrx/store": "^10.0.1",
+  },
+```
+- *src\app\app.module.ts*:
+```js
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+@NgModule({
+  imports: [
+    StoreModule.forRoot(reducers, {
+      metaReducers
+    })
+  ],
+})
+```
+- будет создана новая директория *reducers* и файл *src\app\reducers\index.ts*
 
-======================   
-
-Установка ngrx-хранилища: `ng add @ngrx/store@latest`        
-https://ngrx.io/guide/store/install    
+## Установка store-devtools [ https://ngrx.io/guide/store-devtools/install ]  

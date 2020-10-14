@@ -1,6 +1,6 @@
 # to ignore a line of code use: 
 # // prettier-ignore
 
-README.md
+*.md
 tsconfig.json
 *.html
