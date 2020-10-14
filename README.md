@@ -74,3 +74,23 @@ import { EffectsModule } from '@ngrx/effects';
     EffectsModule.forRoot([])
   ],
 })
+```
+
+## 4. Установка router-store [ https://ngrx.io/guide/router-store/install ]
+С помощью команды `ng add @ngrx/router-store@latest`, выполняем установку *router-store* в ангуляр-проект.
+В результате произойдут следующие изменения:   
+- *package.json*:
+```json
+  "dependencies": {
+    "@ngrx/router-store": "^10.0.1",
+  },
+```
+- *src\app\app.module.ts*:
+```js
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+@NgModule({
+  imports: [
+    StoreRouterConnectingModule.forRoot()
+  ],
+})
+```
