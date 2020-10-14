@@ -12,7 +12,7 @@ https://www.youtube.com/watch?v=n8e9dBDzTzw&t=2s
 https://www.youtube.com/watch?v=kEbdQaLdDoo            
 https://www.youtube.com/watch?v=5MwaZ2G5WnQ           
 
-# Начало работы с NGRX
+# Настройка NGRX
 
 ## 1. Установка ngrx-store (хранилища) [ https://ngrx.io/guide/store/install ]          
 С помощью команды `ng add @ngrx/store@latest`, выполняем установку *ngrx-store* в ангуляр-проект.   
@@ -59,4 +59,18 @@ import { environment } from '../environments/environment';
 
 ## 3. Установка ngrx-effects [ https://ngrx.io/guide/effects/install ]
 С помощью команды `ng add @ngrx/effects@latest`, выполняем установку *ngrx-effects* в ангуляр-проект.
-В результате произойдут следующие изменения: 
+В результате произойдут следующие изменения:   
+- *package.json*:
+```json
+  "dependencies": {
+    "@ngrx/effects": "^10.0.1",
+  },
+```
+- *src\app\app.module.ts*:
+```js
+import { EffectsModule } from '@ngrx/effects';
+@NgModule({
+  imports: [
+    EffectsModule.forRoot([])
+  ],
+})
