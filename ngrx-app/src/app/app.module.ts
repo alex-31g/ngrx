@@ -1,3 +1,4 @@
+import { AppEffects } from './app.effects';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -18,10 +19,14 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers, {
-      metaReducers
+			metaReducers,
+			runtimeChecks: {
+				strictStateImmutability: true,
+				strictActionImmutability: true
+			}
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([AppEffects]),
     StoreRouterConnectingModule.forRoot()
   ],
   providers: [],
