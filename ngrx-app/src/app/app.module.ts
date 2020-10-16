@@ -1,35 +1,20 @@
-import { AppEffects } from './app.effects';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+// =3= Импорт StoreModule и counterReducer
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { counterReducer } from './app.reducer';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    StoreModule.forRoot(reducers, {
-			metaReducers,
-			runtimeChecks: {
-				strictStateImmutability: true,
-				strictActionImmutability: true
-			}
-    }),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([AppEffects]),
-    StoreRouterConnectingModule.forRoot()
-  ],
+	declarations: [AppComponent],
+	
+	// =4= Добавьте функцию StoreModule.forRoot в imports. 
+	// Метод StoreModule.forRoot() регистрирует глобальных поставщиков, необходимых для доступа к Store во всем приложении.
+	imports: [BrowserModule, StoreModule.forRoot({ count: counterReducer })],
+	
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

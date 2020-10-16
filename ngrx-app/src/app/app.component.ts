@@ -1,33 +1,32 @@
 import { Component } from '@angular/core';
-import { CountState } from './reducers/count/count.reducer';
-import { select, Store } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { selectCount, selectUpdatedAt } from './reducers/count/count.selectors';
-// import { CountClearAction, CountDecreaseAction, CountIncreaseAction } from './reducers/count/count.actions';
-import { map } from 'rxjs/operators';
+import { increment, decrement, reset } from './app.actions';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
-  public count$: Observable<number> = this.store$.pipe(select(selectCount));
-  // public disableDecrease$: Observable<boolean> = this.count$.pipe(map(count => count <= 0));
-  public updatedAt$: Observable<number> = this.store$.pipe(select(selectUpdatedAt));
 
-  constructor(private store$: Store<CountState>) {
+  count$: Observable<number>;
+
+  constructor(private store: Store<{ count: number }>) {
+		// =5= Подключаем поток count$ к состоянию count хранилища
+    this.count$ = store.select('count');
   }
 
-  Increase() {
-    // this.store$.dispatch(new CountIncreaseAction());
+	// =6= Методы увеличения, уменьшения и сброса, отправляя действия в магазин.
+  increment() {
+		// С помощью dispatch() происходит отправка action
+    this.store.dispatch(increment());
   }
 
-  Decrease() {
-    // this.store$.dispatch(new CountDecreaseAction());
+  decrement() {
+    this.store.dispatch(decrement());
   }
 
-  Clear() {
-    // this.store$.dispatch(new CountClearAction());
+  reset() {
+    this.store.dispatch(reset());
   }
 }

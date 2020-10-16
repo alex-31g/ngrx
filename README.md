@@ -8,7 +8,8 @@
 - **reduсer** срабатывает только при возникновении какого-либо действия (**action**), которое описывает, что происходит (получение, добавление, удаление, обновление состояния)
 
 # Links
-[Rus Video Tutorial](https://www.youtube.com/watch?v=cklhiPDxkck&list=PL6tnFekR2qfPBdxroaLRqvIv_EJoxauUO)             
+[Rus Video Tutorial](https://www.youtube.com/watch?v=cklhiPDxkck&list=PL6tnFekR2qfPBdxroaLRqvIv_EJoxauUO)  
+[Ru Video Tutorial](https://www.youtube.com/watch?v=d2pkNhIS10o)              
 [Rus Text Tutorial](https://medium.com/ngx/angular-ngrx-%D1%8F%D1%81%D0%BD%D0%BE%D0%B5-%D0%B8-%D1%87%D1%91%D1%82%D0%BA%D0%BE%D0%B5-%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-bdf1c97f44b2)             
 [Eng Text Video Tutorial](https://coursetro.com/posts/code/151/Angular-Ngrx-Store-Tutorial---Learn-Angular-State-Management)    
 
@@ -37,7 +38,6 @@
 > Функция «select» принимает в качестве аргумента чистую функцию.    
 
 4. **Хранилище (store)** — это объект, который объединяет действия, редукторы, селекторы. Например, когда через его функции отправляется действие, то хранилище находит и выполняет соответствующий редуктор. Хранилище также хранит состояние приложения.
-...
 
 # Настройка NGRX
 
