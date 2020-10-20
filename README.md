@@ -126,4 +126,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 *Redux DevTools* - расширение для Google Chrome браузера, которое добавляет вкладку Redux в Google Chrome, которая необходима для отладки.    
 
 # Задачи
-### Счетчик [ app/components/a]
+
+### 1. Счетчик [ app/components/a]
+
+### Задача 2 [ app/components/b]
