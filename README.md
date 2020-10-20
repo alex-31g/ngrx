@@ -8,9 +8,9 @@
 - **reduсer** срабатывает только при возникновении какого-либо действия (**action**), которое описывает, что происходит (получение, добавление, удаление, обновление состояния)
 
 # Links
-[Rus Video Tutorial](https://www.youtube.com/watch?v=cklhiPDxkck&list=PL6tnFekR2qfPBdxroaLRqvIv_EJoxauUO)  
+[Ru Video Tutorial](https://www.youtube.com/watch?v=cklhiPDxkck&list=PL6tnFekR2qfPBdxroaLRqvIv_EJoxauUO)  
 [Ru Video Tutorial](https://www.youtube.com/watch?v=d2pkNhIS10o)              
-[Rus Text Tutorial](https://medium.com/ngx/angular-ngrx-%D1%8F%D1%81%D0%BD%D0%BE%D0%B5-%D0%B8-%D1%87%D1%91%D1%82%D0%BA%D0%BE%D0%B5-%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-bdf1c97f44b2)             
+[Ru Text Tutorial](https://medium.com/ngx/angular-ngrx-%D1%8F%D1%81%D0%BD%D0%BE%D0%B5-%D0%B8-%D1%87%D1%91%D1%82%D0%BA%D0%BE%D0%B5-%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-bdf1c97f44b2)             
 [Eng Text Video Tutorial](https://coursetro.com/posts/code/151/Angular-Ngrx-Store-Tutorial---Learn-Angular-State-Management)    
 
 # Строительные единицы жизненного цикла ngrx - действия (actions), редукторы (reducer), селекторы (select), хранилище (store) и эффекты (effects)
@@ -125,26 +125,5 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 ## 5. Установка расширения Redux DevTools для в Google Chrome браузера
 *Redux DevTools* - расширение для Google Chrome браузера, которое добавляет вкладку Redux в Google Chrome, которая необходима для отладки.    
 
-# Задача #1
-Cделать счетчик, который имеет такое состояние:
-```js
-{
-  count: 0, 
-  updatedAt: timestamp
-}
-```
-Управление с помощью кнопок - increase, decrease, clear.    
-Каждое нажатие обновляет свойство updatedAt.
-
-==============
-Создаем файл `ngrx-app\src\app\app.effects.ts`
-
-```js
-import { Injectable } from '@angular/core';
-import { Actions, createEffect } from '@ngrx/effects';
-@Injectable()
-export class AppEffects {
-  constructor(private actions$: Actions) {}
-}
-```
-==============
+# Задачи
+### Счетчик [ app/components/a]

@@ -1,5 +1,7 @@
-<button (click)="increment()">Increment</button>
-<button (click)="decrement()">Decrement</button>
-<button (click)="reset()">Reset Counter</button>
+<nav>
+	<a routerLink="/1" routerLinkActive="active">1. ngrx - счетчик</a> <br />
+</nav>
 
-<div>Current Count: {{ count$ | async }}</div>
+<div id="sample-panel">
+	<router-outlet></router-outlet>
+</div>
