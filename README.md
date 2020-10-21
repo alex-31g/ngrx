@@ -18,7 +18,7 @@
 ![](https://miro.medium.com/max/631/1*s3oCQSfwACyyioKaST_xTQ.png)
 
 1. Взаимодействие с пользователем может привести к тому, что компонент отправит действие (**action**).        
-> В объекте хранилища (*store*) есть функция для отправки/запуска (dispatch/trigger) действий.            
+> В объекте хранилища (*store*) есть функция для отправки (dispatch) действий.            
 > Класс действий имеет два свойства:           
 > - тип *type* - строка только для чтения, описывающая, что означает действие            
 > - полезная нагрузка *payload* (не все действия требуют полезной нагрузки)             
@@ -129,4 +129,5 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 ### 1. Счетчик [ app/components/a]
 
-### Задача 2 [ app/components/b]
+### 2. To-Do List [ app/components/b]
+https://coursetro.com/posts/code/151/Angular-Ngrx-Store-Tutorial---Learn-Angular-State-Management

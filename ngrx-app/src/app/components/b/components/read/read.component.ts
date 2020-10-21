@@ -18,7 +18,7 @@ export class ReadComponent implements OnInit {
 
   // Section 2 - accessing the store from ngrx within the constructor, and then selecting tutorial which is defined as a the property from app.module.ts in StoreModule.forRoot({}). This calls the tutorial reducer and returns the tutorial state.
   constructor(private store: Store<BState>) { 
-    this.tutorials = store.select('tutorial');
+		this.tutorials = store.select('tutorial');
 	}
 	
 	// This will call our RemoveTutorial action and pass in the index

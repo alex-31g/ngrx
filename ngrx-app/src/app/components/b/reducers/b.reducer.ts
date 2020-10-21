@@ -15,16 +15,23 @@ export function B_Reducer(state: Tutorial[] = [initialState], action: TutorialAc
 		// In the event that the action.type does not match any cases, it will simply return the state, as provided in the first parameter of our reducer.
     switch(action.type) {
         case TutorialActions.ADD_TUTORIAL:
-						return [...state, action.payload];
+					console.log('ADD_TUTORIAL state', state)
+					console.log('ADD_TUTORIAL action.payload', action.payload)
+					console.log([...state, action.payload]);
+					return [...state, action.payload];
 
 				case TutorialActions.REMOVE_TUTORIAL:
-					  // We're simply using .splice to modify the state and then we return it.
-						// state.splice(action.payload, 1)
+					console.log('REMOVE_TUTORIAL state', state)
+					console.log('REMOVE_TUTORIAL action.payload', action.payload)
 
-						const index = action.payload;
-						return [...state.slice(0, index), ...state.slice(index + 1)];
+					const index = action.payload;
+
+					// ...state.slice(0, index) - вернет элементы с 0 включительно по index не включительно
+					// ...state.slice(index + 1) - вернет элементы с (index + 1) включительно до конца
+					// то-есть будут возвращены все исходные элементы, кроме index
+					return [...state.slice(0, index), ...state.slice(index + 1)];
 
         default:
-            return state;
+          return state;
     }
 }
